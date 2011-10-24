@@ -1,0 +1,32 @@
+<% title "Event" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @event.address %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @event.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%= @event.longitude %>
+</p>
+<p>
+  <strong>Gmaps:</strong>
+  <%= @event.gmaps %>
+</p>
+<p>
+  <strong>Start:</strong>
+  <%= @event.start %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_event_path(@event) %> |
+  <%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", events_path %>
+</p>
