@@ -17,12 +17,22 @@
     <%= f.text_field :longitude %>
   </p>
   <p>
-    <%= f.label :gmaps %><br />
-    <%= f.check_box :gmaps %>
-  </p>
-  <p>
     <%= f.label :start %><br />
     <%= f.date_select :start %>
   </p>
-  <p><%= f.submit %></p>
+    <p>
+    <%= f.label :start_time %><br />
+    <%= f.time_select :start_time %>
+  </p>
+    <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description, :size => 60 %>
+  </p>
+    <p>
+    <%= f.label :info_url %><br />
+    <%= f.text_field :info_url, :size => 60 %>
+  </p>
+  
+  
+  <p><%= f.submit "Test Button" %></p>
 <% end %>

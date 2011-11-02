@@ -1,22 +1,35 @@
-<% title "Events" %>
+<div id="sitetitle"><% title "GoTrain4.com" %></div>
 
-<table>
+<body>
+ 
+<%= gmaps("markers" => { "data" => @markers }) %>
+
+
+<%= @markers.inspect %>
+<br /><br />
+<table class="hovertable">
   <tr>
     <th>Name</th>
     <th>Address</th>
     <th>Latitude</th>
     <th>Longitude</th>
-    <th>Gmaps</th>
     <th>Start</th>
+    <th>Start Time</th>
+    <th >Description</th>
+    <th>Info URL</th>
+    
+    
   </tr>
   <% for event in @events %>
-    <tr>
+    <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
       <td><%= event.name %></td>
       <td><%= event.address %></td>
       <td><%= event.latitude %></td>
       <td><%= event.longitude %></td>
-      <td><%= event.gmaps %></td>
       <td><%= event.start %></td>
+      <td><%= event.start.strftime('%A') + ' at ' + event.start_time.strftime('%I:%M %p') %></td>
+      <td class="coldesc"><%= event.description %></td>
+      <td><a href="<%= event.info_url %>"><%= event.name %></a></td>
       <td><%= link_to "Show", event %></td>
       <td><%= link_to "Edit", edit_event_path(event) %></td>
       <td><%= link_to "Destroy", event, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -25,3 +38,4 @@
 </table>
 
 <p><%= link_to "New Event", new_event_path %></p>
+</body>

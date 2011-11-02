@@ -1,29 +1,31 @@
-<% title "Event" %>
+<div id="sitetitle"><% title "GoTrain4.com" %></div>
 
 <p>
   <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-<p>
+  <%= @event.name %><br />
   <strong>Address:</strong>
-  <%= @event.address %>
-</p>
-<p>
+  <%= @event.address %><br />
   <strong>Latitude:</strong>
-  <%= @event.latitude %>
-</p>
-<p>
+  <%= @event.latitude %><br />
   <strong>Longitude:</strong>
   <%= @event.longitude %>
 </p>
 <p>
-  <strong>Gmaps:</strong>
-  <%= @event.gmaps %>
+  <strong>Start:</strong>
+  <%= @event.start.strftime('%A') + ' at ' + @event.start_time.strftime('%I:%M %p') %>
 </p>
 <p>
-  <strong>Start:</strong>
-  <%= @event.start %>
+  <strong>Description:</strong>
+  <%= @event.description %>
 </p>
+<p>
+  <strong>Info URL:</strong>
+  <%= link_to @event.name, @event.info_url %>
+  <%= @markers.inspect %>
+</p>
+
+<%= gmaps("markers" => { "data" => @markers}, "map_options" => {"setCenter" => @json, "auto_adjust" => true, "auto_zoom" => false, "zoom" => 16}) %>
+
 
 <p>
   <%= link_to "Edit", edit_event_path(@event) %> |

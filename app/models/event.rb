@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :name, :address, :latitude, :longitude, :gmaps, :start
+  attr_accessible :name, :address, :latitude, :longitude, :gmaps, :start, :start_time, :description, :info_url
   geocoded_by :address
   after_validation :geocode
   
@@ -9,4 +9,7 @@ class Event < ActiveRecord::Base
     	address 
     end
   
+    def title
+    	self.name
+    end
 end
