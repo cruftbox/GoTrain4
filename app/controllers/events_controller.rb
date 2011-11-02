@@ -29,8 +29,6 @@ class EventsController < ApplicationController
     
   	@markers = m[0] + ",\"title\": \"#{@event.name}\"," + "\"description\": \"#{@event.name} - #{@event.description}\"," + m[1]
     
-    puts "***"+@markers.class.to_s
-    
     def gmaps4rails_infowindow
       "#{Event.name}"
     end

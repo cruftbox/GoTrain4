@@ -21,7 +21,6 @@
 <p>
   <strong>Info URL:</strong>
   <%= link_to @event.name, @event.info_url %>
-  <%= @markers.inspect %>
 </p>
 
 <%= gmaps("markers" => { "data" => @markers}, "map_options" => {"setCenter" => @json, "auto_adjust" => true, "auto_zoom" => false, "zoom" => 16}) %>
