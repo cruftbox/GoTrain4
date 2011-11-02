@@ -3,16 +3,20 @@ class EventsController < ApplicationController
     @events = Event.all
     @json = Event.all.to_gmaps4rails
     
-    data_string = String.new
-    data_string = "[{"
-    @markers = data_string
-    
-    for event in @events
-    	@markers = @markers + "\"description\": \"#{@events.description}\", " + '"title": "", "sidebar": "", "lng": "\"#{@events.longitude}\"", "lat": "34.2027252", "picture": "", "width": "", "height": ""}]'
-    	    	
-	end
-    	
-        
+    @markers = '['
+    @events.each do |event|
+
+      @markers = @markers + '{"description": "' + event.description + '",
+      "title": "' + event.name + '",
+      "sidebar": "",
+      "lng": "' + event.longitude.to_s + '",
+      "lat": "' + event.latitude.to_s + '",
+      "picture": "",
+      "width": "",
+      "height": ""},'
+    end
+    @markers = @markers.chop + ']'
+	        
   end
 
   def show
