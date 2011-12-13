@@ -1,0 +1,76 @@
+/* ======== gotrain4.com stylesheet ::
+Author:    Michael Pusateri
+----------------------------------------------------------------- */
+
+/* ======== Resets ::
+----------------------------------------------------------------- */
+body, address, blockquote, h1, h2, h3, h4, h5, h6, p, pre, dl, ol,
+ul, dd, dt, li, fieldset, form {margin:0;padding:0;}
+
+/* ======== HTML & Body ::
+----------------------------------------------------------------- */
+
+html {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size:100.01%;
+	height:101%;
+	color: black;
+	background-color: white;
+}
+
+body {
+	;
+}
+
+h1, h2, h3 {
+	font-family: Arial,Helvetica,sans-serif;
+	color: orange;
+}
+
+p {
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
+map {
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
+.map_header {
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
+<!-- CSS for table on index page -->
+
+table.hovertable {
+	font-size:6px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+}
+table.hovertable th {
+	background-color:#c3dde0;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+table.hovertable tr {
+	background-color:#d4e3e5;
+}
+table.hovertable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+
+.coldesc {
+	font-size:65%;
+	width:20%;
+}
+
+

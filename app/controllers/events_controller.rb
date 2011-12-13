@@ -3,8 +3,16 @@ class EventsController < ApplicationController
     @events = Event.all
     @json = Event.all.to_gmaps4rails
     
+    
+    if params[:search].present?
+    	search_distance = params[:search_dist]
+    	@locations = Event.near(params[:search], search_distance, :order => :distance)
+ 	else
+    	@locations = Event.all
+ 	end
+ 	
     @markers = '['
-    @events.each do |event|
+    @locations.each do |event|
 
       @markers = @markers + '{"description": "' + event.description + '",
       "title": "' + event.name + '",
@@ -16,7 +24,7 @@ class EventsController < ApplicationController
       "height": ""},'
     end
     @markers = @markers.chop + ']'
-	        
+	
   end
 
   def show

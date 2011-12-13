@@ -1,5 +1,7 @@
 <div id="sitetitle"><% title "GoTrain4.com" %></div>
 
+<body>
+
 <p>
   <strong>Name:</strong>
   <%= @event.name %><br />
@@ -31,3 +33,5 @@
   <%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", events_path %>
 </p>
+
+</body>
